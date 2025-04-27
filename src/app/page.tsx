@@ -43,12 +43,19 @@ export default function HomePage() {
       className="
         min-h-screen
         bg-[radial-gradient(ellipse_at_center,_#fafaff,_#cbb8ff)]
-        pt-35
+        pt-25
         pb-10
         px-4
       "
     >
-      <h1 className="text-5xl font-extrabold text-center text-gray-700 pb-22">
+      <h1 className="
+      text-5xl 
+      font-extrabold 
+      text-center 
+      text-gray-700 
+      pb-22
+      "
+      >
         Cats Cats Cats!
       </h1>
 
@@ -56,17 +63,32 @@ export default function HomePage() {
         id="gallery"
         className="
           grid grid-cols-3 gap-6 justify-center
-          max-w-xl mx-auto 
+          max-w-3xl mx-auto 
         "
       >
         {loadingImages && (
-          <div className="col-span-3 text-center text-lg text-gray-500">Loading...</div>
+          <div className="
+          col-span-3 
+          text-center 
+          text-lg 
+          text-gray-500
+          ">
+            Loading...
+            </div>
         )}
         {!loadingImages &&
           images?.map(img => (
             <div
               key={img.id}
-              className="relative w-40 h-40 rounded-xl overflow-hidden shadow-lg cursor-pointer"
+              className="
+              relative 
+              w-56 
+              h-56 
+              rounded-xl 
+              overflow-hidden 
+              shadow-lg 
+              cursor-pointer
+              "
               onClick={() => handleClick(img.id)}
             >
               <img src={img.url} alt="Cute cat" className="w-full h-full object-cover" />
@@ -77,7 +99,8 @@ export default function HomePage() {
                     bg-black/60
                     p-2
                     overflow-y-auto
-                    text-white text-sm
+                    text-white text-lg
+                    text-center
                     whitespace-pre-wrap break-words
                   "
                 >
@@ -96,6 +119,7 @@ export default function HomePage() {
           px-6 py-3
           bg-purple-600 hover:bg-purple-700
           text-white font-semibold
+          text-2xl
           rounded-xl
           shadow-md
           transition
